@@ -178,7 +178,7 @@ public class Start {
 //        System.out.println("Ilość liczb ujemnych: "+ujemne);
 //        System.out.println("Ilość zer: "+zero);
 
-        //zadanie2.4 
+        //zadanie2.4
         double min, max;
         Scanner scan = new Scanner(System.in);
         System.out.print("Podaj liczbę n: ");
