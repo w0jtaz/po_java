@@ -1,4 +1,7 @@
+import java.lang.StringBuffer;
 import java.util.Scanner;
+import static java.lang.Character.*;
+
 public class Start {
 
 
@@ -18,10 +21,34 @@ public class Start {
 //        String napis2 = scan.nextLine();
 //        System.out.print("W napisie " + napis1 + " napis " + napis2 + " występuje " + countSubStr(napis1, napis2) + " razy");
 
-        //c
+//        //c
 //        System.out.print("Podaj napis: ");
 //        String napis = scan.nextLine();
 //        System.out.print("Srodkowy znak napisu: " + middle(napis));
+
+        //d
+        System.out.print("Podaj napis: ");
+        String napis = scan.nextLine();
+        System.out.print("Podaj liczbę: ");
+        int liczba = scan.nextInt();
+        System.out.print(repeat(napis, liczba));
+
+          //e
+//        System.out.print("Podaj napis: ");
+//        String napis1 = scan.nextLine();
+//        System.out.print("Podaj napis: ");
+//        String napis2 = scan.nextLine();
+//        int[] tab = where(napis1, napis2);
+//        for(int i = 0; i <=tab.length-1; i++){
+//            System.out.println(tab[i]);
+//        }
+
+        //f
+//        System.out.print("Podaj napis: ");
+//        String napis = scan.nextLine();
+//        System.out.print(change(napis));
+
+        //g
 
 
     }
@@ -49,29 +76,56 @@ public class Start {
         return ileRazy;
     }
 
-    //do dokończenia
-//    public static String middle(String str) {
-//        String srodkowy ="";
-//        StringBuffer stringbuffer = new StringBuffer(str);
-//        if (stringbuffer.length()%2!=0) {
-//
-//
-//        } else {
-//
-//        }
-//
-//        return srodkowy;
-//    }
 
-    public static String repeat(String str, int n) {
-        String konkatenacja = "";
-        StringBuffer stringbuffer = new StringBuffer(str);
-        for(int i=0; i<=stringbuffer.length(); i++) {
-            
+    public static String middle(String str) {
+        StringBuffer sb = new StringBuffer(str);
+        StringBuffer newsb = new StringBuffer();
+        if (sb.length()%2 == 0){
+            newsb.append(sb.charAt(sb.length()/2-1)).append(sb.charAt(sb.length()/2));
+        }
+        if(str.length()%2 != 0){
+            newsb.append(sb.charAt(sb.length()/2));
         }
 
+        return newsb.toString();
+    }
 
-        return konkatenacja;
+    public static String repeat(String str, int n) {
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i <= n-1; i++){
+            sb.append(str);
+        }
+        return sb.toString();
+    }
+
+    public static int[] where(String str, String subStr){
+        int n = countSubStr(str, subStr);
+        int[] where = new int[n];
+        int j = 0;
+        StringBuffer sb = new StringBuffer(str);
+        for(int i = 0; i <= sb.length()-1; i++){
+            if((sb.length()-1) >= i+subStr.length()-1){
+                String s = sb.substring(i, i+subStr.length());
+                if(s.equals(subStr)) {
+                    where[j] = i;
+                    j++;
+
+                }
+            }
+        }
+        return where;
+    }
+
+    public static String change(String str){
+        StringBuffer changed = new StringBuffer();
+        StringBuffer sb = new StringBuffer(str);
+        for(int i = 0; i <=sb.length()-1; i++) {
+            if (isLowerCase(sb.charAt(i)))
+                changed.append(toUpperCase(sb.charAt((i))));
+            if(isUpperCase(sb.charAt(i)))
+                changed.append(toLowerCase(sb.charAt(i)));
+        }
+        return changed.toString();
     }
 
 }
