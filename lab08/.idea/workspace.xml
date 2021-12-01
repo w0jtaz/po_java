@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9da1325-d6db-4e19-b787-82927245e68e" name="Changes" comment="" />
+    <list default="true" id="ee77464f-f566-4349-a293-5df6eee9740c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="21N7AEDU0xFAU16HNEsKXILgzoZ" />
+  <component name="ProjectId" id="21gscUTNiw8N6KNppIk4b3rpGa5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,23 +28,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
-  <component name="RunManager" selected="Application.TestKlasImetod">
-    <configuration name="TestKlasImetod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.imiajd.kowalczyk.TestKlasImetod" />
-      <module name="lab07" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.imiajd.kowalczyk.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestNazwanyPunkt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.imiajd.kowalczyk.TestNazwanyPunkt" />
-      <module name="lab07" />
+  <component name="RunManager">
+    <configuration name="TestOsoba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.imiajd.kowalczyk.TestOsoba" />
+      <module name="lab08" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="pl.imiajd.kowalczyk.*" />
@@ -57,21 +44,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestKlasImetod" />
-        <item itemvalue="Application.TestNazwanyPunkt" />
+        <item itemvalue="Application.TestOsoba" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c9da1325-d6db-4e19-b787-82927245e68e" name="Changes" comment="" />
-      <created>1637769548421</created>
+      <changelist id="ee77464f-f566-4349-a293-5df6eee9740c" name="Changes" comment="" />
+      <created>1638374146520</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1637769548421</updated>
-      <workItem from="1637769550394" duration="5822000" />
-      <workItem from="1638374001625" duration="140000" />
+      <updated>1638374146520</updated>
+      <workItem from="1638374147908" duration="4283000" />
     </task>
     <servers />
   </component>
