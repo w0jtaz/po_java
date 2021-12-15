@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee77464f-f566-4349-a293-5df6eee9740c" name="Changes" comment="" />
+    <list default="true" id="1c5cea81-eb31-48e9-b27f-8a3d4bf6ab1f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="21gscUTNiw8N6KNppIk4b3rpGa5" />
+  <component name="ProjectId" id="22KQMeNJz0q6tUzlXpG3gwloejV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,36 +28,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
-  <component name="RunManager">
-    <configuration name="TestOsoba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.imiajd.kowalczyk.TestOsoba" />
-      <module name="lab08" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.imiajd.kowalczyk.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TestOsoba" />
-      </list>
-    </recent_temporary>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="pl.imiajd.kowalczyk" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ee77464f-f566-4349-a293-5df6eee9740c" name="Changes" comment="" />
-      <created>1638374146520</created>
+      <changelist id="1c5cea81-eb31-48e9-b27f-8a3d4bf6ab1f" name="Changes" comment="" />
+      <created>1639583755150</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1638374146520</updated>
-      <workItem from="1638374147908" duration="6269000" />
-      <workItem from="1639583719770" duration="33000" />
+      <updated>1639583755150</updated>
+      <workItem from="1639583756676" duration="2932000" />
     </task>
     <servers />
   </component>
