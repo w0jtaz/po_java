@@ -23,10 +23,7 @@ public class Osoba implements Cloneable, Comparable<Osoba> {
 
     @Override
     public String toString() {
-        return "Osoba{" +
-                "nazwisko='" + nazwisko + '\'' +
-                ", dataUrodzenia=" + dataUrodzenia +
-                '}';
+        return "Osoba "+"["+nazwisko+"] "+dataUrodzenia;
     }
 
     @Override
