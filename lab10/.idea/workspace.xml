@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c5cea81-eb31-48e9-b27f-8a3d4bf6ab1f" name="Changes" comment="" />
+    <list default="true" id="002cc5d9-e0d4-45a4-a1dd-78f7b96db87f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="22KQMeNJz0q6tUzlXpG3gwloejV" />
+  <component name="ProjectId" id="23TRZozpUkYIC8uUcWn66Dse7QL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,42 +28,37 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
-  <component name="RecentsManager">
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="pl.imiajd.kowalczyk" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="TestOsoba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.imiajd.kowalczyk.TestOsoba" />
-      <module name="lab09" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.imiajd.kowalczyk.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="Application.ArrayDemo">
+    <configuration name="ArrayDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ArrayDemo" />
+      <module name="lab10" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PairDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PairDemo" />
+      <module name="lab10" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestOsoba" />
+        <item itemvalue="Application.ArrayDemo" />
+        <item itemvalue="Application.PairDemo" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1c5cea81-eb31-48e9-b27f-8a3d4bf6ab1f" name="Changes" comment="" />
-      <created>1639583755150</created>
+      <changelist id="002cc5d9-e0d4-45a4-a1dd-78f7b96db87f" name="Changes" comment="" />
+      <created>1641756151315</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1639583755150</updated>
-      <workItem from="1639583756676" duration="4297000" />
-      <workItem from="1639588099187" duration="822000" />
-      <workItem from="1641756065939" duration="79000" />
+      <updated>1641756151315</updated>
+      <workItem from="1641756152807" duration="642000" />
     </task>
     <servers />
   </component>
