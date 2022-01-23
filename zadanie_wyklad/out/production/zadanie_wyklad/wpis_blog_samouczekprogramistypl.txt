@@ -1,0 +1,300 @@
+InterfejsPermalink
+WyobraŸ sobie kuchenkê mikrofalow¹. Kuchenka ma zestaw przycisków, parê pokrête³ mo¿liwe, ¿e dodatkowy wyœwietlacz. Ten zestaw to nic innego jak w³aœnie interfejs (ang. interface). Interfejs to zestaw „mechanizmów” s³u¿¹cych do interakcji, w tym przypadku z kuchenk¹ mikrofalow¹.
+
+Pojêcie interfejsu mo¿na tak¿e przenieœæ do œwiata programowania. Mówimy wówczas o tak zwanym API (ang. Application Programming Interface).
+
+Interfejs w kontekœcie programowania w jêzyku Java to zestaw metod bez ich implementacji (bez kodu definiuj¹cego zachowanie metody)1. W³aœciwa implementacja metod danego interfejsu znajduje siê w klasie implementuj¹cej dany interfejs.
+
+W jêzyku Java do definiowania interfejsów u¿ywamy s³owa kluczowego interface. Interfejsy, podobnie jak klasy, definiujemy w osobnych plikach. Nazwa pliku musi odpowiadaæ nazwie interfejsu.
+
+public interface Clock {
+    long secondsElapsedSince(LocalDateTime date);
+}
+Powy¿ej mamy przyk³ad interfejsu o nazwie Clock, który ma jedn¹ metodê secondsElapsedSince, która przyjmuje argument typu LocalDateTime2 i zwraca wynik typu long mówi¹cy o liczbie sekund, która minê³a od czasu przekazanego w argumencie.
+
+Wszystkie metody zawarte w interfejsie domyœlnie s¹ publiczne wiêc w tym przypadku mo¿na omin¹æ s³owo kluczowe public, nie jest potrzebne.
+
+Poza zwyk³ymi metodami w interfejsie mog¹ siê znajdowaæ
+
+metody domyœlne,
+metody prywatne,
+metody statyczne,
+sta³e.
+Wiêcej o metodach statycznych mo¿esz przeczytaæ w artykule opisuj¹cym pierwszy program w jêzyku Java. Nie jest to dla Ciebie nic nowego. Metody domyœlne i sta³e wymagaj¹ dodatkowego wyjaœnienia.
+
+Pobierz opracowania zadañ z rozmów kwalifikacyjnych
+
+Przygotowa³em rozwi¹zania kilku zadañ algorytmicznych z rozmów kwalifikacyjnych. Rozk³adam je na czynniki pierwsze i pokazujê ró¿ne sposoby ich rozwi¹zania. Do³¹cz do grupy ponad 6147 Samouków, którzy jako pierwsi dowiaduj¹ siê o nowych treœciach na blogu, a przeœlê je na Twój e-mail.
+
+Dodaj mnie do newslettera
+Metody domyœlnePermalink
+Istnieje mo¿liwoœæ zdefiniowania tak zwanych metod domyœlnych. Metody te mog¹ mieæ w³aœciw¹ implementacje w ciele interfejsu. Metody takie poprzedzone s¹ s³owem kluczowym default jak w przyk³adzie poni¿ej
+
+public interface MicrowaveOven {
+    void start();
+
+    void setDuration(int durationInSeconds);
+
+    boolean isFinished();
+
+    void setPower(int power);
+
+    default String getName() {
+        return "MicrovaweOwen";
+    }
+}
+Klasy, które implementuj¹ interfejs mog¹ nadpisaæ metodê domyœln¹.
+
+Metody prywatnePermalink
+Metody prywatne poprzedzone s¹ s³owem kluczowym private3. Metody prywatne, w odró¿nieniu od pozosta³ych, mog¹ byæ wywo³ane wy³¹cznie w definicji interfejsu.
+
+Z racji tego ograniczenia, metody prywatne w interfejsach maj¹ sens wy³¹cznie w po³¹czeniu z metodami domyœlnymi. Proszê spójrz na przyk³ad poni¿ej, w którym modyfikujê interfejs MicrowaveOven:
+
+public interface MicrowaveOven {
+    // removed for brevity
+    default Duration getRecommendedDefrostTime(double foodWeightInGrams) {
+        double frostRate = 0.8;
+        int power = 300;
+        return getRecommendedTime(power, frostRate, foodWeightInGrams);
+    }
+
+    default Duration getRecommendedWarmingUpTime(double foodWeightInGrams) {
+        double frostRate = 0.2;
+        int power = 700;
+        return getRecommendedTime(power, frostRate, foodWeightInGrams);
+    }
+
+    private Duration getRecommendedTime(int power, double frostRate, double foodWeightInGrams) {
+        double durationInMinutes = foodWeightInGrams / ((1 - frostRate) * power);
+        long durationInSeconds = (long) (durationInMinutes * 60);
+        return Duration.ofSeconds(durationInSeconds);
+    }
+}
+Metody prywatne w interfejsach pozwalaj¹ na usuniêcie kodu, który powtarza siê w wielu miejscach. Ten powtarzaj¹cy siê kod jest wówczas zawarty w ciele metody prywatnej.
+
+Wiêcej o dobrych praktykach w programowaniu mo¿esz przeczytaæ w osobnym artykule opisuj¹cym DRY, KISS i YAGNI. Kilka uwag zebra³em te¿ w artykule opisuj¹cym najczêœciej pope³niane b³êdy.
+
+W przyk³adzie powy¿ej dwie domyœlne metody getRecommendedDefrostTime i getRecommendedWarmingUpTime u¿ywaj¹ metody prywatnej getRecommendedTime, która pozwala na u¿ycie „magicznego” wzoru na obliczanie zalecanej d³ugoœci czasu pracy mikrofalówki. Bez tej metody wzór musia³by znaleŸæ siê w obu metodach co powodowa³oby duplikacjê kodu4.
+
+Wartoœci niezmienne i sta³ePermalink
+int counter = 123;
+counter to zmienna. Do zmiennej counter mo¿emy przypisaæ now¹ wartoœæ:
+
+counter = counter + 1;
+Wartoœci niezmienne w odró¿nieniu od zmiennych poprzedzamy s³owem kluczowym final. Poni¿ej mo¿esz zobaczyæ przyk³ad klasy z atrybutem, którego wartoœci nie mo¿emy przypisaæ na nowo. Atrybuty tego typu mo¿emy inicjalizowaæ jak w przyk³adzie poni¿ej: bezpoœrednio b¹dŸ w ciele konstruktora.
+
+public class Calculator {
+    public final double PI = 3.14;
+    public final double SQRT_2;
+
+    public Calculator() {
+        SQRT_2 = Math.sqrt(2);
+    }
+}
+Wartoœci niezmienne, podobnie jak metody, mog¹ byæ przypisane do instancji b¹dŸ klasy. Jeœli taka wartoœæ przypisana jest do klasy mówimy wówczas o sta³ej. Jeœli chcemy aby sta³a by³a przypisana do klasy poprzedzamy j¹ s³owem kluczowym static.
+
+Do sta³ych wartoœæ mo¿emy przypisaæ wy³¹cznie raz – podczas inicjalizacji klasy. Zgodnie z konwencj¹ nazewnicz¹ sta³e piszemy wielkimi literami.
+
+public interface Cat {
+    int NUMBER_OF_PAWS = 4;
+}
+W interfejsie powy¿ej mamy sta³¹, która pokazuje ile ³ap ma kot. Domyœlnie wszystkie atrybuty interfejsu s¹ sta³ymi publicznymi przypisanymi do interfejsu wiêc s³owa kluczowe public static final mog¹ zostaæ pominiête.
+
+Implementacja interfejsuPermalink
+Sam interfejs nie jest zbyt wiele warty bez jego implementacji. Poni¿ej mo¿esz zobaczyæ przyk³adow¹, prost¹ implementacjê.
+
+public interface Clock {
+    long secondsElapsedSince(LocalDateTime date);
+}
+
+public class BrokenClock implements Clock {
+    public long secondsElapsedSince(LocalDateTime date) {
+        return 300;
+    }
+}
+Klasa BrokenClock implementuje interfejs Clock. Zwróæ uwagê na s³owo kluczowe implements. U¿ywamy go ¿eby pokazaæ ¿e klasa BrokenClock implementuje interfejs Clock.
+
+W jêzyku Java jedna klasa mo¿e implementowaæ wiele interfejsów. W takim przypadku klasa implementuj¹ca musi definiowaæ metody wszystkich interfejsów, które implementuje5.
+
+Dziedziczenie interfejsówPermalink
+Dziedziczenie to temat na osobny, obszerny artyku³. Jednak ju¿ teraz wspomnê, ¿e interfejsy mog¹ dziedziczyæ po innych interfejsach. Dziedziczenie oznaczane jest s³owem kluczowym extends. Interfejs, który dziedziczy po innych interfejsach zawiera wszystkie metody z tych interfejsów.
+
+public interface Cat {
+    int NUMBER_OF_PAWS = 4;
+
+    String getName();
+}
+
+public interface LasagnaEater {
+    String getLasagnaRecipe();
+}
+
+public interface FatCat extends Cat, LasagnaEater {
+    double getWeight();
+}
+W przyk³adzie powy¿ej klasa implementuj¹ca interfejs FatCat, musi zaimplementowaæ 3 metody:
+
+String getName(),
+String getLasagnaRecipe(),
+duble getWeight().
+Interfejs znacznikowyPermalink
+A czy mo¿liwa jest sytuacja kiedy interfejs nie ma ¿adnej metody? Oczywiœcie, ¿e tak. Mówimy wówczas o interfejsie znacznikowym. Jak sama nazwa wskazuje s³u¿y on do oznaczenia, danej klasy. Dziêki temu mo¿esz przekazaæ zestaw dodatkowych informacji. Przyk³adem takiego interfejsu jest java.io.Serializable, którego u¿ywamy aby daæ znaæ kompilatorowi, ¿e dana klasa jest serializowalna (o serializacji przeczytasz w innym artykule).
+
+Interfejs a typ obiektuPermalink
+Ka¿dy obiekt w jêzyku Java mo¿e byæ przypisany do zmiennej okreœlonego typu. W najprostszym przypadku jest to jego klasa.
+
+Interfejsy pozwalaj¹ na przypisane obiektu do zmiennej typu interfejsu. Wydaje siê to trochê skomplikowane jednak mam nadziejê, ¿e przyk³ad poni¿ej pomo¿e w zrozumieniu tego tematu.
+
+public class Garfield implements FatCat {
+    // implementacja metod
+}
+Diagram poni¿ej to tak zwany diagram klas. Wiêcej o tej notacji przeczytasz we wprowadzeniu do UML.
+
+
+Przyk³ad hierarchii dziedziczenia
+Garfield garfield = new Garfield();
+FatCat fatCat = new Garfield();
+Cat cat = new Garfield();
+LasagnaEater lasagnaEater = new Garfield();
+Instancjê klasy Garfield mo¿emy przypisaæ zarówno do zmiennej klasy Garfield jak i ka¿dego z interfejsów, który ta klasa implementuje (bezpoœrednio lub poœrednio). Chocia¿ w trakcie wykonania programu ka¿dy z obiektów jest tego samego typu (instancja klasy Garfield), to w trakcie kompilacji sprawa wygl¹da trochê inaczej:
+
+na obiekcie garfield mo¿emy wykonaæ wszystkie metody udostêpnione w klasie Garfield i interfejsach, które ta klasa implementuje:
+getWeight(),
+getName(),
+getLasagnaReceipe().
+na obiekcie fatCat mo¿emy wykonaæ wszystkie metody udostêpnione w interfejsie FatCat i interfejsach po których dziedziczy:
+getWeight(),
+getName(),
+getLasagnaReceipe().
+na obiekcie cat mo¿emy wykonaæ wy³¹cznie metody z interfejsu Cat:
+getName().
+na obiekcie lasagnaEater mo¿emy wykonaæ wy³¹cznie metody z interfejsu LasagnaEater:
+getLasagnaReceipe().
+Zastosowania interfejsówPermalink
+Do czego w³aœciwie potrzebne s¹ nam interfejsy? Czy nie jest to po prostu zestaw dodatkowych linijek kodu, które trzeba napisaæ i nic one nie wnosz¹? Otó¿ nie.
+
+Interfejsy w bardzo prosty sposób u³atwiaj¹ ró¿nego rodzaju integracjê ró¿nych fragmentów kodu. WyobraŸ sobie sytuacjê, w której Piotrek pisze program obliczaj¹cy œredni¹ temperaturê w ka¿dym z województw. Wspó³pracuje on z Kasi¹, która pisze program udostêpniaj¹cy aktualn¹ temperaturê w danej miejscowoœci.
+
+Aby Piotrek móg³ napisaæ swój program musi skorzystaæ z programu Kasi. Musi siê z nim zintegrowaæ. Tak¹ integracjê u³atwiaj¹ w³aœnie interfejsy.
+
+Piotrek z Kasi¹ uzgadniaj¹, ¿e bêd¹ u¿ywali nastêpuj¹cego interfejsu
+
+public interface Thermometer {
+    double getCurrentTemperatureFor(String city);
+}
+Dziêki niemu Piotrek mo¿e pisaæ swój program równolegle z Kasi¹.
+
+Co wiêcej mo¿e siê okazaæ, ¿e implementacja Kasi nie jest zbyt dok³adna. Ania implementuje ten sam interfejs ale temperatury przez ni¹ zwracane s¹ dok³adniejsze. Wówczas Piotrek w ogóle nie musi zmieniaæ swojego programu. Wystarczy, ze u¿yje innej implementacji interfejsu Thermometer dostarczonej przez Aniê.
+
+To w³aœnie jest kolejna zaleta interfejsów. Dziêki nim mo¿emy pisaæ programy, które mo¿emy w ³atwiejszy sposób modyfikowaæ. Interfejsy jasno oddzielaj¹ komponenty programu. Dziêki takiemu podejœciu komponenty mo¿na z ³atwoœci¹ wymieniaæ.
+
+Interfejs czyli widok na obiektPermalink
+Postaram siê pokazaæ Ci kolejny przyk³ad. Wa¿ne jest ¿eby zrozumieæ koncept interfejsów. S¹ one bardzo wa¿ne i czêsto u¿ywane w codziennym programowaniu. WyobraŸ sobie piekarnik. Piekarnik to obiekt. W piekarniku mo¿esz upiec chleb, zrobiæ dobr¹ pieczeñ czy upiec ciasteczka. Ka¿de z tych dañ wymaga innych ustawieñ piekarnika.
+
+Inna temperatura, inny czas pieczenia, inny tryb. W programowaniu czêsto chcemy ukryæ takie szczegó³y przez innymi klasami. Na zewn¹trz w formie interfejsu wystawiamy jedynie dobrze zdefiniowane metody. Ka¿da z tych metod mo¿e byæ umieszczona w osobnym interfejsie, który bêdzie implementowany przez obiekt piekarnika:
+
+public interface BakingOven {
+    void bakeCookies();
+    void bakeBread();
+}
+public interface RoastingOven {
+    void roastChicken();
+}
+public class Oven implements BakingOven, RoastingOven {
+
+    private int time;
+    private int temperature;
+
+    @Override
+    public void bakeBread() {
+        temperature = 200;
+        time = 120;
+        turnOn();
+    }
+
+    @Override
+    public void bakeCookies() {
+        temperature = 180;
+        time = 90;
+        turnOn();
+    }
+
+    @Override
+    public void roastChicken() {
+        temperature = 130;
+        time = 240;
+        turnOn();
+    }
+
+    private void turnOn() {
+        System.out.println(String.format("Start. Heat up to %s and work for %d minutes.", temperature, time));
+    }
+
+    public static void main(String[] args) {
+        Oven oven = new Oven();
+        BakingOven bakingOven = oven;
+        RoastingOven roastingOven = oven;
+
+        bakingOven.bakeBread();
+        bakingOven.bakeCookies();
+        roastingOven.roastChicken();
+    }
+}
+Po uruchomieniu tego fragmentu kodu na konsoli poka¿e siê:
+
+Start. Heat up to 200 and work for 120 minutes
+Start. Heat up to 180 and work for 90 minutes.
+Start. Heat up to 130 and work for 240 minutes.
+U¿y³em tutaj mechanizmu formatowania ³añcuchów znaków. Jeœli chcesz przeczytaæ o tym wiêcej zachêcam do przeczytania osobnego artyku³u na temat formatowania ³añcuchów znaków w jêzyku Java.
+
+Interfejsy opisuj¹ spójny zakres funkcjonalnoœci udostêpniony przez dany obiekt. Metody, które s¹ w nim zawarte powinny byæ ze sob¹ powi¹zane. Mo¿esz porównaæ interfejsy do “widoku” na obiekt/klasê. Widz¹c obiekt przez pryzmat interfejsu mo¿esz widzieæ tylko podzbiór jego mo¿liwoœci.
+
+ZadaniePermalink
+Napisz dwie klasy implementuj¹ce interfejs Computation. Niech jedna z implementacji przeprowadza operacjê dodawania, druga mno¿enia.
+
+public interface Computation {
+    double compute(double argument1, double argument2);
+}
+U¿yj obu implementacji do uzupe³nienia programu poni¿ej:
+
+public class Main {
+    public static void main(String[] args) {
+        Main main = new Main();
+        Computation computation;
+
+        if (main.shouldMultiply()) {
+            computation = new Multiplication(); // zaimplementuj brakuj¹c¹ klasê
+        }
+        else {
+            computation = new Addition(); // zaimplementuj brakuj¹c¹ klasê
+        }
+
+        double argument1 = main.getArgument();
+        double argument2 = main.getArgument();
+
+        double result = computation.compute(argument1, argument2);
+        System.out.println("Wynik: " + result);
+    }
+
+    private boolean shouldMultiply() {
+        return false; // tutaj zapytaj u¿ytkownika co chce zrobiæ (mno¿enie czy dodawanie)
+    }
+
+    private double getArgument() {
+        return 0; // tutaj pobierz liczbê od u¿ytkownika
+    }
+}
+Program po uruchomieniu powinien zapytaæ u¿ytkownika jak¹ operacjê chce wykonaæ, nastêpnie pobraæ dwa argumenty niezbêdne do wykonania tej operacji. Ostatni¹ linijk¹ powinien byæ wynik dodawania/mno¿enia wyœwietlony u¿ytkownikowi. Przygotowa³em te¿ dla Ciebie przyk³adowe rozwi¹zanie zadania, pamiêtaj jednak, ¿e rozwi¹zuj¹c je samodzielnie nauczysz siê najwiêcej.
+
+Materia³y dodatkowePermalink
+Oczywiœcie nie wyczerpaliœmy tematu mimo sporej objêtoœci artyku³u. Zachêcam do samodzielnego pog³êbiania wiedzy korzystaj¹c z materia³ów dodatkowych. Specyfikacja Jêzyka Java jest w jêzyku angielskim.
+
+Opis interfejsu na Wikipedii
+Rozdzia³ w Java Language Specification dotycz¹cy interfejsów
+Kod Ÿród³owy przyk³adów u¿ytych w artykule
+PodsumowaniePermalink
+Dzisiaj poruszy³em bardzo wiele zagadnieñ. Po lekturze artyku³u wiesz prawie wszystko interfejsach i ich przeznaczeniu. Teraz znasz te¿ kilka nowych s³ów kluczowych w jêzyku Java. Wystarczaj¹ca dawka wiedzy jak na jeden dzieñ :)
+
+Mam nadziejê, ¿e artyku³ by³ dla Ciebie ciekawy, jeœli cokolwiek nie by³o zrozumia³e b¹dŸ wymaga dok³adniejszego wyjaœnienia daj znaæ, postaram siê pomóc.
+
+Jak zwykle na koniec mam do Ciebie proœbê. Proszê podziel siê artyku³em ze swoimi znajomymi, zale¿y mi na dotarciu do jak najwiêkszej liczby osób, które chc¹ nauczyæ siê programowania :). Zapraszam tak¿e na Samouczek Programisty na Facebooku. Mo¿esz te¿ zapisaæ siê do samouczkowego newslettera ¿eby nie pomi¹æ ¿adnego nowego artyku³u
