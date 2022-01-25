@@ -2,25 +2,35 @@ package pl.edu.uwm.obiektowe.s162436.kolo2;
 
 import java.util.Objects;
 
-public class StockPosition<T, V>{
-    private  T ob1;
-    private V ob2;
+public class StockPosition<T extends Product, V extends Number> implements Comparable<StockPosition> {
+    private  T product;
+    private V quantity;
 
-    public StockPosition(T t, V v){
-        this.ob1 = t;
-        this.ob2 = v;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        StockPosition<?, ?> that = (StockPosition<?, ?>) o;
-        return Objects.equals(ob1, that.ob1) && Objects.equals(ob2, that.ob2);
+    public StockPosition(T product, V quantity){
+        this.product = product;
+        this.quantity = quantity;
     }
 
     public double getValue(){
+        return this.product.getPrice() * this.quantity.doubleValue();
+    }
 
-        return 0;
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || !obj.getClass().isInstance(this)) return false;
+
+        else {
+            StockPosition p = (StockPosition) obj;
+            return p.product.getId()== this.product.getId();
+        }
+    }
+
+    @Override
+    public int compareTo(StockPosition o) {
+        return Double.compare(this.product.getPrice(), o.product.getPrice());
+    }
+
+    public T getProduct(){
+        return product;
     }
 }

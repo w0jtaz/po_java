@@ -27,7 +27,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab08" />
   </component>
   <component name="RunManager" selected="Application.KolejkaTest">
     <configuration name="Kolejka" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -100,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1642006627541</updated>
       <workItem from="1642006629189" duration="5101000" />
-      <workItem from="1643037742781" duration="1796000" />
+      <workItem from="1643037742781" duration="2474000" />
     </task>
     <servers />
   </component>

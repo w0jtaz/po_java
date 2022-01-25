@@ -34,9 +34,8 @@ public abstract class Product {
     @Override
     public String toString() {
         return "Product: name ->" +
-                "name='" + name + '\'' +
-                ", id=" + id +
-                ", price=" + price +
-                '}';
+                "name->'" + name +
+                ", id->" + id +
+                ", price->" + price;
     }
 }

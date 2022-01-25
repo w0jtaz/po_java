@@ -28,6 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="ProductStockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -61,6 +62,7 @@
       <workItem from="1642607196854" duration="6558000" />
       <workItem from="1642613876969" duration="170000" />
       <workItem from="1642968859550" duration="88000" />
+      <workItem from="1643116610169" duration="4162000" />
     </task>
     <servers />
   </component>

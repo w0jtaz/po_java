@@ -14,12 +14,17 @@ public class ProductStockTest{
 
         stock.addProduct(book1);
         stock.addProduct(book2);
+        stock.getTotalValue();
+        stock.applyDiscount(0.15f);
+        stock.getTotalValue();
+        stock.applyDiscount(0.30f);
+        stock.getTotalValue();
+
         stock.addProduct(game1);
         stock.addProduct(game2);
 
 
-        stock.applyDiscount(15);
-        System.out.println(stock);
+        System.out.println(stock.toString());
 
 
 

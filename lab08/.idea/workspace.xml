@@ -27,6 +27,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kolokwium2" />
   </component>
   <component name="RunManager">
     <configuration name="TestOsoba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -58,6 +59,8 @@
       <updated>1638374146520</updated>
       <workItem from="1638374147908" duration="6269000" />
       <workItem from="1639583719770" duration="33000" />
+      <workItem from="1643046936684" duration="17000" />
+      <workItem from="1643116577695" duration="21000" />
     </task>
     <servers />
   </component>
