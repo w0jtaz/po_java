@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27255c4f-033c-42fe-b948-d7f3e35578c3" name="Changes" comment="" />
+    <list default="true" id="b0c8805c-44d3-4e62-898a-0ea396a7ece3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="23vAbgYIL0Q8a280zrGWJBO9dUX" />
+  <component name="ProjectId" id="24EzKbEHkAknJ17LDoLF6FA7DUY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,15 +28,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration name="ProductStockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.edu.uwm.obiektowe.s162436.kolo2.ProductStockTest" />
-      <module name="kolokwium2" />
+    <configuration name="KlasaTestujaca" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.edu.uwm.obiektowe.s162436.KlasaTestujaca" />
+      <module name="poprawa_kolokwium2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.edu.uwm.obiektowe.s162436.kolo2.*" />
+          <option name="PATTERN" value="pl.edu.uwm.obiektowe.s162436.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -46,24 +45,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ProductStockTest" />
+        <item itemvalue="Application.KlasaTestujaca" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="27255c4f-033c-42fe-b948-d7f3e35578c3" name="Changes" comment="" />
-      <created>1642604262089</created>
+      <changelist id="b0c8805c-44d3-4e62-898a-0ea396a7ece3" name="Changes" comment="" />
+      <created>1643210473549</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1642604262089</updated>
-      <workItem from="1642604263443" duration="13000" />
-      <workItem from="1642607196854" duration="6558000" />
-      <workItem from="1642613876969" duration="170000" />
-      <workItem from="1642968859550" duration="88000" />
-      <workItem from="1643116610169" duration="4162000" />
-      <workItem from="1643194131369" duration="81000" />
+      <updated>1643210473549</updated>
+      <workItem from="1643210477882" duration="5424000" />
     </task>
     <servers />
   </component>
